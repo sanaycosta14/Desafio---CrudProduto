@@ -52,10 +52,10 @@ Edite o `.env` com os dados do banco:
 ```
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
-DB_PORT=3306
+DB_PORT=8005
 DB_DATABASE=laravel
 DB_USERNAME=laravel
-DB_PASSWORD=root
+DB_PASSWORD=12345678
 ```
 
 ### 3. Suba o banco de dados com Docker
@@ -106,19 +106,7 @@ Após implementação, as rotas disponíveis estarão em `routes/api.php` com os
 | PUT    | /api/produtos/{id}| Atualizar produto|
 | DELETE | /api/produtos/{id}| Deletar produto  |
 
----
 
-## ✅ Checklist de Implementação
-
-- [x] Estrutura Laravel limpa e funcional
-- [x] Banco MySQL isolado em container Docker
-- [ ] Migration e Model `Product`
-- [ ] Controller RESTful com validações
-- [ ] Rotas de API
-- [ ] Testes manuais via Postman ou Insomnia
-- [ ] Documentação final
-
----
 
 ## 👨‍💻 Autor
 

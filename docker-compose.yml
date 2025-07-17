@@ -1,22 +1,25 @@
 services:
   db:
     image: mysql:8.0
-    container_name: mysql_db
-    restart: unless-stopped
-    environment:
-      MYSQL_DATABASE: laravel
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_PASSWORD: root
-      MYSQL_USER: laravel
+    container_name: desafio_crud_mysql
     ports:
       - "3306:3306"
+    environment:
+      MYSQL_DATABASE: laravel
+      MYSQL_USER: laravel
+      MYSQL_PASSWORD: '12345678'
+      MYSQL_ROOT_PASSWORD: '12345678'
+    command: ['--default-authentication-plugin=mysql_native_password']
     volumes:
       - db_data:/var/lib/mysql
     networks:
-      - laravel
+      - laravel-net
+    restart: unless-stopped
+
+networks:
+  laravel-net:
+    driver: bridge
 
 volumes:
   db_data:
-
-networks:
-  laravel:
+    driver: local
