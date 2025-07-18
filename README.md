@@ -1,4 +1,4 @@
-# 🧪 Desafio Técnico — CRUD de Produtos com Laravel
+# Desafio Técnico — CRUD de Produtos com Laravel
 
 ## Objetivo
 
@@ -52,17 +52,33 @@ cd Desafio---CrudProduto
 
 ### 2. Configurar o Ambiente
 
-Copie o ficheiro de ambiente de exemplo e instale as dependências do PHP.
+Copie o ficheiro de ambiente de exemplo.
 
 ```bash
 # Crie o ficheiro .env a partir do exemplo
 cp .env.example .env
+```
 
-# Instale as dependências com o Composer
+**Edite o ficheiro `.env`** e garanta que as variáveis do banco de dados correspondem às do `docker-compose.yml`. Elas devem ser:
+
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=laravel
+DB_USERNAME=laravel
+DB_PASSWORD=12345678
+```
+
+### 3. Instalar as Dependências
+
+Instale as dependências do PHP com o Composer.
+
+```bash
 composer install
 ```
 
-### 3. Gerar a Chave da Aplicação
+### 4. Gerar a Chave da Aplicação
 
 Este passo é crucial para a segurança do Laravel.
 
@@ -70,7 +86,7 @@ Este passo é crucial para a segurança do Laravel.
 php artisan key:generate
 ```
 
-### 4. Iniciar o Banco de Dados com Docker
+### 5. Iniciar o Banco de Dados com Docker
 
 Suba o contêiner do MySQL em segundo plano.
 
@@ -78,7 +94,7 @@ Suba o contêiner do MySQL em segundo plano.
 docker-compose up -d
 ```
 
-### 5. Executar as Migrations e Seeders
+### 6. Executar as Migrations e Seeders
 
 Crie as tabelas no banco de dados e popule a tabela de produtos com 3 exemplos iniciais.
 
@@ -86,7 +102,7 @@ Crie as tabelas no banco de dados e popule a tabela de produtos com 3 exemplos i
 php artisan migrate --seed
 ```
 
-### 6. Iniciar o Servidor
+### 7. Iniciar o Servidor
 
 Inicie o servidor de desenvolvimento do Laravel.
 
@@ -98,7 +114,7 @@ A API estará disponível em `http://127.0.0.1:8000`.
 
 -----
 
-## 🚀 Como Testar as Rotas da API
+## Como Testar as Rotas da API
 
 Utilize uma ferramenta como Postman, Insomnia ou os comandos `curl` abaixo para testar os endpoints.
 
@@ -174,8 +190,6 @@ curl -X DELETE [http://127.0.0.1:8000/api/produtos/deletar/1](http://127.0.0.1:8
 
 -----
 
-## Autor
+## 👨‍💻 Autor
 
 Desenvolvido por **Sanayane Costa**.
-
-```
