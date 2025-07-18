@@ -26,7 +26,7 @@ class ProductController extends Controller
         $validar = Validator::make($request->all(),[
             'nome' => 'required|string|max:255',
             'preco' => 'required|numeric|gt:0',
-            'quantidade' => 'required|integer'
+            'quantidade' => 'required|integer|gte:0'
         ]);
 
 
@@ -70,7 +70,7 @@ class ProductController extends Controller
         $validar = Validator::make($request->all(),[
             'nome' => 'sometimes|required|string|max:255',
             'preco' => 'sometimes|required|numeric|gt:0',
-            'quantidade' => 'sometimes|required|integer',
+            'quantidade' => 'sometimes|required|integer|gte:0',
         ]);
 
         if($validar->fails()){
